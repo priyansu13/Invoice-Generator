@@ -1,0 +1,148 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+h2 {
+    color: #007bff;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[readonly] {
+    background-color: #e9ecef;
+}
+
+.item-row {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.item-row .form-group {
+    margin-bottom: 10px;
+}
+
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#generate-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+#generate-button:hover {
+    background-color: #007bff;
+}
+
+#add-item {
+    background-color: #007bff;
+    color: #fff;
+}
+
+#add-item:hover {
+    background-color: #007bff;
+}
+
+#print-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+#print-button:hover {
+    background-color: #007bff;
+}
+
+
+.invoice {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.invoice-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#invoice-logo {
+    max-height: 20px;
+    margin-right: 20px;
+}
+
+#company-details, #client-details, #invoice-details {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+#summary {
+    margin-top: 20px;
+    font-size: 18px;
+}

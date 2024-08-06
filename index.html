@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="invoice-form">
+            <h1>Invoice Generator</h1>
+            
+            <section class="section">
+                <h2>Company Details</h2>
+                <div class="form-group">
+                    <label for="company-logo">Company Logo URL</label>
+                    <input type="text" id="company-logo" required>
+                </div>
+                <div class="form-group">
+                    <label for="your-company">Your Company</label>
+                    <input type="text" id="your-company" required>
+                </div>
+                <div class="form-group">
+                    <label for="your-address">Company's Address</label>
+                    <input type="text" id="your-address" required>
+                </div>
+                <div class="form-group">
+                    <label for="your-contact">Contact Information</label>
+                    <input type="text" id="your-contact" required>
+                </div>
+                <div class="form-group">
+                    <label for="your-gstin">GSTIN</label>
+                    <input type="text" id="your-gstin" required>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Client Details</h2>
+                <div class="form-group">
+                    <label for="client-company">Client's Company</label>
+                    <input type="text" id="client-company" required>
+                </div>
+                <div class="form-group">
+                    <label for="client-address">Client's Address</label>
+                    <input type="text" id="client-address" required>
+                </div>
+                <div class="form-group">
+                    <label for="client-contact">Client Contact Information</label>
+                    <input type="text" id="client-contact" required>
+                </div>
+                <div class="form-group">
+                    <label for="client-gstin">Client GSTIN</label>
+                    <input type="text" id="client-gstin" required>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Invoice Details</h2>
+                <div class="form-group">
+                    <label for="invoice-number">Invoice Number</label>
+                    <input type="text" id="invoice-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="invoice-date">Invoice Date</label>
+                    <input type="date" id="invoice-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="due-date">Due Date</label>
+                    <input type="date" id="due-date" required>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Items</h2>
+                <div id="item-rows">
+                    <div class="item-row">
+                        <div class="form-group">
+                            <label for="item-description">Description</label>
+                            <input type="text" class="item-description" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hsn-sac">HSN/SAC</label>
+                            <input type="text" class="hsn-sac" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="qty">Qty</label>
+                            <input type="number" class="qty" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rate">Rate</label>
+                            <input type="number" class="rate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Amount</label>
+                            <input type="number" class="amount" readonly>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="add-item">Add Item</button>
+            </section>
+
+            <section class="section">
+                <h2>Summary</h2>
+                <div class="form-group">
+                    <label for="sub-total">Sub Total</label>
+                    <input type="number" id="sub-total" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="gst-percentage">GST (%)</label>
+                    <input type="number" id="gst-percentage" required>
+                </div>
+                <div class="form-group">
+                    <label for="tax">GST Amount</label>
+                    <input type="number" id="tax" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="total">Total</label>
+                    <input type="number" id="total" readonly>
+                </div>
+            </section>
+
+            <button type="submit" id="generate-button">Generate Invoice</button>
+        </form>
+        
+        <section id="invoice" class="invoice" style="display: none;">
+            <div class="invoice-header">
+                <img id="invoice-logo" src="" alt="Company Logo">
+                <div id="company-details"></div>
+            </div>
+            <div id="client-details"></div>
+            <div id="invoice-details"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>HSN/SAC</th>
+                        <th>Qty</th>
+                        <th>Rate</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="item-details"></tbody>
+            </table>
+            <div id="summary">
+                <div><strong>Sub Total:</strong> Rs. <span id="summary-sub-total"></span></div>
+                <div><strong>GST Amount:</strong> Rs. <span id="summary-tax"></span></div>
+                <div><strong>Total:</strong> Rs. <span id="summary-total"></span></div>
+            </div>
+            <button id="print-button">Print Invoice</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
